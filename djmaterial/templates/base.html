@@ -1,0 +1,82 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>{% block meta_title %}{% endblock %}{% if settings.SITE_TITLE %} | {{ settings.SITE_TITLE }}{% endif %}</title>
+
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
+    <!-- Latest compiled and minified CSS -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
+    <!-- Optional theme -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> -->
+
+
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    {% include 'material/includes/material_js.html' %}
+
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'material/css/forms.css' %}"/>
+    <link rel="stylesheet" href="{% static 'material/css/jquery.datetimepicker.css' %}"/>
+    <!-- <link rel="stylesheet" href="{% static 'material/css/materialize.css' %}"/> -->
+    <link rel="stylesheet" href="{% static 'css/test.css' %}"/>
+    <!-- local_materialize is a POC for customizing classes/elements -->
+    <link rel="stylesheet" href="{% static 'css/local_materialize.css' %}"/>
+
+    {% block extra_js %}
+    {% endblock %}
+
+</head>
+
+<body {% block body_id %}id="body"{% endblock %}>
+  {% block header %}
+    <header class="col s12">
+      <nav class="blue lighten-2">
+        <!-- Slide-out menu -->
+          <nav class="blue lighten-2">
+            <ul id="slide-out" class="side-nav waves-effect waves-blue">
+              <li><a href="/admin/">Admin</a></li>
+              <li><a href="/">Login</a></li>
+              <li><a href="/checkout">Checkout</a></li>
+            </ul>
+            <a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="mdi-navigation-menu"></i></a>
+          </nav>
+        <!-- End Slide-bar menu -->
+        <!-- Main Header -->
+        <div class="nav-wrapper blue lighten-2">
+          <div class="blue lighten-2 center">
+            <span class="chem_title">Django-Material POC</span>
+          </div>
+          <div class="row blue lighten-2">
+            <div class="col s12">
+              <ul class="tabs blue lighten-2">
+                <li class="tab col s4"><a class="active" href="#login">Login</a></li>
+                <li class="tab col s4"><a href="#test2">Test 2</a></li>
+                <li class="tab col s4"><a href="#test3">Test 3</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- End Header and Tabs -->
+      </nav>
+    </header>
+  {% endblock %}
+
+  {% block content %}
+  {% endblock %}
+
+</body>
+<footer class="footer">
+  This is the footer
+</footer>
+</html>

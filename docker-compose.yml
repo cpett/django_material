@@ -1,0 +1,14 @@
+djangomaterial:
+  build: .
+  command: python manage.py runserver 0.0.0.0:80
+  volumes:
+    - .:/app
+  ports:
+    - "80:80"
+  links:
+    - postgres
+
+postgres:
+  image: postgres
+  ports:
+    - "5432:5432"

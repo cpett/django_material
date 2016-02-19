@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load material_form %}
+{% block content %}
+<div id="wrapper" class="container expand-on-small-only">
+  <div id="content" class="row valign">
+    <div class="col s12 m12 l12">
+      <!-- LOGIN CARD -->
+      <div id="login" class="card">
+        <div class="card-content">
+          <div class="card-title black-text">
+            <h3>Checkout Page</h3>
+          </div>
+          <div class="">
+          <form method="POST" class="viewform">{% csrf_token %}
+              {% form %}
+                  {% part form.first_name prefix %}<i class="mdi-action-account-box prefix"></i>{% endpart %}
+                  {% part form.last_name prefix %}<i class="mdi-action-account-box prefix"></i>{% endpart %}
+                  {% part form.email prefix %}<i class="mdi-communication-email prefix"></i>{% endpart %}
+                  {% part form.phone prefix %}<i class="mdi-communication-call prefix"></i>{% endpart %}
+                  {% part form.card_type label %}{% endpart %}
+              {% endform %}
+              <button type="submit" name="_submit" class="btn btn-primary btn-lg">Submit</button>
+          </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

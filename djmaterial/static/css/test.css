@@ -1,0 +1,29 @@
+.content-body {
+  height: 55em;
+}
+
+.head-bar {
+  margin: 0px;
+  margin-bottom: 0px;
+}
+
+.chem_title {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.test2 {
+  color: black;
+  background-color: white;
+}
+
+.test3 {
+  color: black;
+  background-color: white;
+}
+
+.footer {
+  height: 10em;
+  color: white;
+  background-color: #64B5F6;
+}
